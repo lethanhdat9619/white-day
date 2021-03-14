@@ -2,10 +2,16 @@
 <html lang="en">
 
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FROM HANOI WITH LOVE <3</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css"
+    />
+    <script src="https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <style type="text/css">
         body {
@@ -13,6 +19,9 @@
             justify-content: center;
             align-items: center;
             font-family: 'Open Sans', sans-serif;
+            height: 500px;
+            background-image: url("https://scontent.fhan2-6.fna.fbcdn.net/v/t1.0-9/149694443_1110216472827016_3201495217677645288_o.jpg?_nc_cat=100&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=9IsQTgLmjukAX9S_fOr&_nc_ht=scontent.fhan2-6.fna&oh=0652de40ec476a5a5030cdd15a6f7160&oe=60720F64");
+            background-position: center;
         }
 
         .question {
@@ -35,9 +44,9 @@
         }
 
         .answer {
-            margin: 10px;
+            margin: 40px 10px 10px 10px;
             width: 200px;
-            height: 100px;
+            height: 50px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -54,20 +63,41 @@
         .answer.no {
             background-color: #E35347;
         }
+
+        span {
+            text-align: center;
+        }
+        .snow-container{position:fixed;width:100%;max-width:100%;z-index:99999;pointer-events:none;overflow:hidden;top:0;height:100%}
+.snow{display:block;position:absolute;z-index:2;top:0;right:0;bottom:0;left:0;pointer-events:none;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0);-webkit-animation:snow linear infinite;animation:snow linear infinite}
+.snow.foreground{background-image:url("https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-large-075d267ecbc42e3564c8ed43516dd557.png");-webkit-animation-duration:15s;animation-duration:10s}
+.snow.foreground.layered{-webkit-animation-delay:7.5s;animation-delay:7.5s}
+.snow.middleground{background-image:url(https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-medium-0b8a5e0732315b68e1f54185be7a1ad9.png);-webkit-animation-duration:20s;animation-duration:15s}
+.snow.middleground.layered{-webkit-animation-delay:10s;animation-delay:10s}
+.snow.background{background-image:url(https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-small-1ecd03b1fce08c24e064ff8c0a72c519.png);-webkit-animation-duration:25s;animation-duration:20s}
+.snow.background.layered{-webkit-animation-delay:12.5s;animation-delay:12.5s}
+@-webkit-keyframes snow{0%{-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{-webkit-transform:translate3d(5%,100%,0);transform:translate3d(5%,100%,0)}}
+@keyframes snow{0%{-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{-webkit-transform:translate3d(5%,100%,0);transform:translate3d(5%,100%,0)}}
     </style>
 </head>
 
 <body>
+    <div class='snow-container'>
+        <div class='snow foreground'></div>
+        <div class='snow foreground layered'></div>
+        <div class='snow middleground'></div>
+        <div class='snow middleground layered'></div>
+        <div class='snow background'></div>
+        <div class='snow background layered'></div>
+    </div>
     <div class="troller">
         <div class="question">
-            <span>Crush ơi! Cậu làm bạn gái tớ nhé! <3 </span> </div> <div class="answers">
-                    <div class="answer yes" onclick="troll(this)" onmouseover="troll(this)">Có</div>
-                    <div class="answer no" onclick="troll(this)" onmouseover="troll(this)">Không</div>
-        </div>
+            <span>Linh ơi! Anh có điều muốn nói, em click vào đây nhé <3 </span> 
+        </div> 
     </div>
 
     <script>
         let count = 0;
+        let clickNumber = 0;
         function troll(answer) {
             let answers = document.getElementsByClassName('answer');
             if (count >= 5) {
@@ -90,11 +120,24 @@
                 }
                 count++;
             } else {
-                alert('Mình biết mà!!!');
+                alert('Anh biết mà <3');
             }
-
-
         }
+        $(".troller").click(function(){
+            if(clickNumber > 0) {return}
+            $(".question").hide()
+            setTimeout(() => {
+                $(".troller").append(` 
+                <div class="question">
+                    <span>Linh ơi! Làm người yêu anh nhé! <3 </span> 
+                </div> 
+                <div class="answers">
+                    <div class="answer yes" onclick="troll(this)" onmouseover="troll(this)">Có</div>
+                    <div class="answer no" onclick="troll(this)" onmouseover="troll(this)">Không</div>
+                </div>`)  
+            },2000)
+        clickNumber++;
+        });
     </script>
 </body>
 
