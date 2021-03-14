@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,20 +13,24 @@
     href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css"
     />
     <script src="https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <style type="text/css">
         body {
             display: flex;
             justify-content: center;
-            align-items: center;
+            /* align-items: center; */
             font-family: 'Open Sans', sans-serif;
-            height: 500px;
+            height: 90vh;
             background-image: url("https://scontent.fhan2-6.fna.fbcdn.net/v/t1.0-9/149694443_1110216472827016_3201495217677645288_o.jpg?_nc_cat=100&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=9IsQTgLmjukAX9S_fOr&_nc_ht=scontent.fhan2-6.fna&oh=0652de40ec476a5a5030cdd15a6f7160&oe=60720F64");
             background-position: center;
         }
 
+        .troller {
+            cursor: pointer;
+            margin-top: 20vh;
+        }
+
         .question {
-            width: 500px;
+            width: 600px;
             height: 200px;
             display: block;
             background: radial-gradient(#3F4E5A, #011627);
@@ -35,10 +40,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 0 20px 0 20px;
         }
 
         .answers {
-            width: 500px;
+            /* width: 600px; */
             display: flex;
             justify-content: space-between;
         }
@@ -46,7 +52,7 @@
         .answer {
             margin: 40px 10px 10px 10px;
             width: 200px;
-            height: 50px;
+            height: 100px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -91,7 +97,7 @@
     </div>
     <div class="troller">
         <div class="question">
-            <span>Linh ơi! Anh có điều muốn nói, em click vào đây nhé <3 </span> 
+            <span> Hello Linh, anh có điều muốn nói với em, click vào đây nhé!</span> 
         </div> 
     </div>
 
@@ -120,22 +126,131 @@
                 }
                 count++;
             } else {
-                alert('Anh biết mà <3');
+                alert(`Anh biết mà <3, đồng ý thì vào nhắn cho ny em 1 câu đi thôi =))`);
             }
         }
         $(".troller").click(function(){
-            if(clickNumber > 0) {return}
-            $(".question").hide()
-            setTimeout(() => {
-                $(".troller").append(` 
-                <div class="question">
-                    <span>Linh ơi! Làm người yêu anh nhé! <3 </span> 
-                </div> 
-                <div class="answers">
-                    <div class="answer yes" onclick="troll(this)" onmouseover="troll(this)">Có</div>
-                    <div class="answer no" onclick="troll(this)" onmouseover="troll(this)">Không</div>
-                </div>`)  
-            },2000)
+            if(clickNumber > 10) {return}
+            if(clickNumber === 0) {
+                $(".question").hide()
+                setTimeout(() => {
+                    $(".troller").append(` 
+                    <div class="question">
+                        <span>Thực ra cũng chả có gì cả, em cứ click lần lượt để đọc nhé! </span> 
+                    </div> 
+                   `)  
+                },2000)
+            }
+            if(clickNumber === 1) {
+                $(".question").hide()
+                setTimeout(() => {
+                    $(".troller").append(` 
+                    <div class="question">
+                        <span>Anh không đẹp try, hát cũng không hay, cũng chả có tài lẻ gì!</span> 
+                    </div> 
+                   `)  
+                },2000)
+            }
+            if(clickNumber === 2) {
+                $(".question").hide()
+                setTimeout(() => {
+                    $(".troller").append(` 
+                    <div class="question">
+                        <span>Anh không phải người hay nói, cũng không giỏi thổ lộ tình cảm!</span> 
+                    </div> 
+                   `)  
+                },2000)
+            }
+            if(clickNumber === 3) {
+                $(".question").hide()
+                setTimeout(() => {
+                    $(".troller").append(` 
+                    <div class="question">
+                        <span>Nhưng anh sẽ tìm cách để em có thể cảm nhận được!</span> 
+                    </div> 
+                   `)  
+                },2000)
+            }
+            if(clickNumber === 4) {
+                $(".question").hide()
+                setTimeout(() => {
+                    $(".troller").append(` 
+                    <div class="question">
+                        <span>Thực ra anh cũng muốn nói nhưng lại sợ em buồn!</span> 
+                    </div> 
+                   `)  
+                },2000)
+            }
+            if(clickNumber === 5) {
+                $(".question").hide()
+                setTimeout(() => {
+                    $(".troller").append(` 
+                    <div class="question">
+                        <span>Là anh không có thích Linh!</span>
+                        <span style='font-size:50px;'>&#128546;</span>
+                    </div> 
+                   `)  
+                },2000)
+            }
+            if(clickNumber === 6) {
+                $(".question").hide()
+                setTimeout(() => {
+                    $(".troller").append(` 
+                    <div class="question">
+                        <span>Anh cũng không biết tại sao nữa!</span>
+                    </div> 
+                   `)  
+                },2000)
+            }
+            if(clickNumber === 7) {
+                $(".question").hide()
+                setTimeout(() => {
+                    $(".troller").append(` 
+                    <div class="question">
+                        <span>Đấy là người khác người ta sẽ nói thế!</span>
+                    </div> 
+                   `)  
+                },2000)
+            }
+            if(clickNumber === 8) {
+                $(".question").hide()
+                setTimeout(() => {
+                    $(".troller").append(` 
+                    <div class="question">
+                        <span>Còn anh thì cũng ... vậy :'(</span>
+                    </div> 
+                   `)  
+                },2000)
+            }
+            if(clickNumber === 9) {
+                $(".question").hide()
+                setTimeout(() => {
+                    $(".troller").append(` 
+                    <div class="question">
+                        <span>Anh không thích Linh, vì anh yêu Linh rồi còn đôu</span>
+                        <span style='font-size:50px;'>&#128514;</span>
+                    </div> 
+                   `)  
+                },2000)
+            }
+            if(clickNumber === 10) {
+                $(".question").hide()
+                setTimeout(() => {
+                    $(".troller").append(` 
+                    <div class="question">
+                        <span>Linh ơi! Làm người yêu anh nhé! <3 </span> 
+                    </div> 
+                    `)  
+                },2000)
+                setTimeout(() => {
+                    $(".troller").append(` 
+                    <div class="answers">
+                        <div class="answer yes" onclick="troll(this)" onmouseover="troll(this)">Có</div>
+                        <div class="answer no" onclick="troll(this)" onmouseover="troll(this)">Không</div>
+                    </div>
+                    `)  
+                },4000)
+            }
         clickNumber++;
         });
     </script>
